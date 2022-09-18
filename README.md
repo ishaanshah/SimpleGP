@@ -10,7 +10,6 @@ Implementation of [Iterative Closest Point](https://en.wikipedia.org/wiki/Iterat
       style="width: 50%;"
     >
   </div>
-  <figcaption style="text-align:center"><i>ICP on a point cloud of 100k points</i></figcaption>
 </figure>
 
 Iterative closest point algorithm is used in point cloud registration to merge multiple point clouds together. It works by finding out pairwise corrospondences between source and target point cloud and finding out the transformation such that $\sum_{i=0}^n(x_i - \mathrm{Rt}y_i)$ is minimum. This repository implements ICP using SVD, point to point least squares and point to plane least squares. A comparison of the time taken by each of the methods is given below.
@@ -89,9 +88,30 @@ options:
   --algorithm {svd,lsqr_point,lsqr_plane}
   --iters ITERS
 ```
-
 ## Laplacian Mesh Editing
+<figure>
+  <div style="display: flex; justify-content: center">
+    <img
+      src="./media/laplacian.png"
+      style="width: 50%;"
+    >
+  </div>
+</figure>
+
+Laplacian mesh editing is a commonly used method for deforming meshes naturaly by defining regions of interest and moving a handle to transfrom all the vertices in the ROI.
+
+### Usage
+```bash
+❯ python laplacian_mesh_editing.py  --help
+usage: laplacian_mesh_editing.py [-h] [--file FILE] [--boundary_file BOUNDARY_FILE] [--handle_idx HANDLE_IDX] [--handle_delta HANDLE_DELTA HANDLE_DELTA HANDLE_DELTA]
+
+options:
+  -h, --help            show this help message and exit
+  --file FILE
+  --boundary_file BOUNDARY_FILE
+  --handle_idx HANDLE_IDX
+  --handle_delta HANDLE_DELTA HANDLE_DELTA HANDLE_DELTA
+```
 
 ## Acknowledgements
-
-## References
+The Spot cow model was taken from Keenan Crane's [3D model repository](https://www.cs.cmu.edu/~kmcrane/Projects/ModelRepository/)
