@@ -10,22 +10,12 @@ Implementation of [Iterative Closest Point](https://en.wikipedia.org/wiki/Iterat
       style="width: 50%;"
     >
   </div>
-  <figcaption style="text-align:center">ICP on a point cloud of 100k points</figcaption>
+  <figcaption style="text-align:center"><i>ICP on a point cloud of 100k points</i></figcaption>
 </figure>
 
 Iterative closest point algorithm is used in point cloud registration to merge multiple point clouds together. It works by finding out pairwise corrospondences between source and target point cloud and finding out the transformation such that $\sum_{i=0}^n(x_i - \mathrm{Rt}y_i)$ is minimum. This repository implements ICP using SVD, point to point least squares and point to plane least squares. A comparison of the time taken by each of the methods is given below.
 
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-z1fk{border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
-.tg .tg-fymr{border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-pcvp{border-color:inherit;text-align:left;vertical-align:top}
-</style>
+### Benchmarks
 <table class="tg" style="undefined;table-layout: fixed; width: 668px">
 <colgroup>
 <col style="width: 74px">
