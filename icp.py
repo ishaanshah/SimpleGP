@@ -15,9 +15,12 @@ parser.add_argument(
     "--algorithm", default="svd", choices=["svd", "lsqr_point", "lsqr_plane"]
 )
 parser.add_argument("--iters", default=100, type=int)
+parser.add_argument("--seed", type=int)
 
 args = parser.parse_args()
 
+if args.seed:
+    np.random.seed(args.seed)
 
 def svd_icp(s_mc, t_mc, s_m, t_m, corr_idx):
     cov = t_mc[corr_idx].T @ s_mc

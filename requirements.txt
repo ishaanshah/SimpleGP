@@ -1,0 +1,5 @@
+networkx
+polyscope
+numpy
+scipy
+trimesh
